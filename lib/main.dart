@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       title: "Code Land",
       debugShowCheckedModeBanner: false,
       home: MainPage(),
-      theme: ThemeData(accentColor: Colors.white70),
+      theme: ThemeData(colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.white70)),
     );
   }
 }

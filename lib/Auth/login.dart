@@ -42,7 +42,8 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   signIn(String username, pass) async {
-    var url = "https://dalalin.herokuapp.com/api-token-auth/";
+    // var url = "https://dalalin.herokuapp.com/api-token-auth/";
+    var url = "https://kinglink2.herokuapp.com/v2/api-token-auth/";
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     Map<String, dynamic> bodyData = {
       'username': username,
@@ -62,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
           headers: {
             HttpHeaders.contentTypeHeader: "application/json",
           },
-          body: convert.jsonEncode(bodyData));
+          body: convert.jsonEncode(bodyData),);
 
       if (response.statusCode == 200) {
         jsonResponse = convert.jsonDecode(response.body);
